@@ -1,26 +1,37 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-zodiak: var(--font-zodiak);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --background: #603c08;
+  --foreground: #ededed;
+}
+
+.mainHeadline {
+  font-size: clamp(2rem, 16.5vw, 17rem);
+}
+.headline {
+  font-size: clamp(5rem, 15vw, 13rem);
+}
+.aboutSpanHeadline {
+  font-size: clamp(3rem, 15vw, 10rem);
+}
+
+.bookingHeadline {
+  font-size: clamp(4rem, 21vw, 19rem);
 }
