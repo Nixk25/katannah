@@ -4,7 +4,10 @@ import { SHOWS } from "@/constants/SHOWS";
 
 const Shows = () => {
   return (
-    <section className="bg-background pb-[20vh] relative z-4 overflow-hidden ">
+    <section
+      id="shows"
+      className="bg-background pb-[20vh] relative z-4 overflow-hidden "
+    >
       <Headline>Shows</Headline>
       <span className="text-3xl sm:text-6xl px-4 inline-block mb-5">MAY</span>
       {SHOWS.map((show, index) => (

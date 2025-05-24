@@ -6,7 +6,7 @@ export const MUSIC = [
     year: "2025",
     album: "Underdog",
     albumCover: albumCoverUnderDog,
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://youtu.be/tjHYAV5Hle0?si=DKYHtpnZ901CtKxj",
   },
   {
     name: "Timberlandy",
@@ -14,7 +14,7 @@ export const MUSIC = [
     year: "2025",
     album: "Underdog",
     albumCover: albumCoverUnderDog,
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://youtu.be/MpL2k1PdYyE?si=b_6QMj3kgDWyiaHx",
   },
   {
     name: "Wemby",
@@ -22,7 +22,7 @@ export const MUSIC = [
     year: "2025",
     album: "Underdog",
     albumCover: albumCoverUnderDog,
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://youtu.be/NiCmaMqinhI?si=MSccVQDBVMwcQkd1",
   },
   {
     name: "ALL BLACK",
@@ -30,7 +30,7 @@ export const MUSIC = [
     year: "2025",
     album: "Underdog",
     albumCover: albumCoverUnderDog,
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://youtu.be/Dzs5oYzf62M?si=zywaq3wBcsaFkFBg",
   },
   {
     name: "Trendsetter (woah)",
@@ -38,6 +38,6 @@ export const MUSIC = [
     year: "2025",
     album: "Underdog",
     albumCover: albumCoverUnderDog,
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://youtu.be/OwLgWLUf4XI?si=miwDgqCBtRMORK3K",
   },
 ];

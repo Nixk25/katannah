@@ -45,7 +45,7 @@ const About = () => {
     };
   }, []);
   return (
-    <section className="h-[300vh] relative z-2 bg-background ">
+    <section id="about" className="h-[300vh] relative z-2 bg-background ">
       <Headline>About</Headline>
       <p
         ref={aboutText}
