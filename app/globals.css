@@ -26,7 +26,7 @@ body {
   font-size: clamp(2rem, 16.5vw, 17rem);
 }
 .headline {
-  font-size: clamp(5rem, 15vw, 13rem);
+  font-size: clamp(4rem, 15vw, 15rem);
 }
 .aboutSpanHeadline {
   font-size: clamp(3rem, 15vw, 10rem);

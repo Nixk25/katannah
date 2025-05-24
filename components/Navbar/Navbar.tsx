@@ -10,35 +10,33 @@ const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!navbarRef.current) return;
-    const navbar = navbarRef.current;
-    const navbarHeight = navbarRef.current.offsetHeight;
+    let lastScrollY = window.scrollY;
 
-    const st = ScrollTrigger.create({
-      start: `top+=${navbarHeight * 2} top`,
-      end: "bottom bottom",
-      onUpdate: (self) => {
-        const scrollingDown = self.direction > 0;
+    ScrollTrigger.create({
+      start: 0,
+      end: document.body.scrollHeight,
+      onUpdate: () => {
+        const currentScroll = window.scrollY;
+        const navbar = navbarRef.current;
+        if (!navbar) return;
 
-        if (scrollingDown) {
+        if (currentScroll > lastScrollY + 5) {
           gsap.to(navbar, {
             y: "-100%",
-            duration: 0.6,
+            duration: 0.4,
             ease: "power4.inOut",
           });
-        } else {
+        } else if (currentScroll < lastScrollY - 5) {
           gsap.to(navbar, {
-            y: 0,
-            duration: 0.5,
-            ease: "power4.out(0.3)",
+            y: "0%",
+            duration: 0.4,
+            ease: "power4.inOut",
           });
         }
+
+        lastScrollY = currentScroll;
       },
     });
-
-    return () => {
-      st.kill();
-    };
   }, []);
 
   return (

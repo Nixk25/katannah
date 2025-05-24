@@ -6,7 +6,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const Headline = ({ children }: { children: React.ReactNode }) => {
+const Headline = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -49,7 +55,10 @@ const Headline = ({ children }: { children: React.ReactNode }) => {
   return (
     <h2
       ref={headlineRef}
-      className="font-zodiak headline -tracking-wider leading-[0.8] mb-[100px] relative z-[9999] px-4"
+      className={
+        `font-zodiak headline -tracking-wider leading-[0.8] mb-[100px] relative z-[9999] px-4` +
+        (className ? ` ${className}` : "")
+      }
       style={{ opacity: 0 }}
     >
       {children}

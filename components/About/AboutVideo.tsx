@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 const AboutVideo = () => {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const headlinesRef = useRef(null);
   const headlineRefs = useRef<HTMLSpanElement[]>([]);
 
@@ -75,15 +75,60 @@ const AboutVideo = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+
+  useEffect(() => {
+    const video = sectionRef.current?.querySelector(
+      "video"
+    ) as HTMLVideoElement | null;
+    if (!video || !sectionRef.current) return;
+
+    gsap.set(video, {
+      opacity: 0,
+      filter: "blur(20px)",
+    });
+
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "top center",
+      end: "bottom top",
+      once: true,
+      onEnter: () => {
+        video.play();
+        gsap.to(video, {
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power2.out",
+        });
+      },
+      onLeaveBack: () => {
+        video.pause();
+        gsap.to(video, {
+          opacity: 0,
+          filter: "blur(20px)",
+          duration: 1,
+          ease: "power2.in",
+        });
+      },
+      markers: false,
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <div ref={sectionRef} className="sticky top-0 z-20 h-screen">
       <div className="absolute inset-0 w-full h-full">
         <video
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-0"
           src="/videoAbout.mov"
           autoPlay
           muted
           loop
+          playsInline
+          style={{ filter: "blur(20px)" }}
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>

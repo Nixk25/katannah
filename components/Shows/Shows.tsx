@@ -6,11 +6,11 @@ const Shows = () => {
   return (
     <section className="bg-background pb-[20vh] relative z-4 overflow-hidden ">
       <Headline>Shows</Headline>
-      <span className="text-3xl sm:text-6xl px-4">MAY</span>
+      <span className="text-3xl sm:text-6xl px-4 inline-block mb-5">MAY</span>
       {SHOWS.map((show, index) => (
         <div
           key={index}
-          className="px-4 border-t first:border-b py-4 border-white flex justify-between items-center text-xs"
+          className="px-4 border-t first:border-b py-4 sm:py-6 border-white flex justify-between last:border-b items-center text-xs sm:text-3xl "
         >
           <div className="flex gap-5">
             <span>{show.date}</span>
