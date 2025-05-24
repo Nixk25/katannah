@@ -1,4 +1,4 @@
-import albumCoverUnderDog from "../public/albumcover.png";
+import albumCoverUnderDog from "../public/albumcover.webp";
 export const MUSIC = [
   {
     name: "415",

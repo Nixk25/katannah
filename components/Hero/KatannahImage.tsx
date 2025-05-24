@@ -18,7 +18,7 @@ const KatannahImage = () => {
   return (
     <div
       id="mainImage"
-      className="absolute inset-0 z-3 h-full w-full bg-[url('/katannahmaska.png')] bg-cover bg-top bg-no-repeat select-none"
+      className="absolute inset-0 z-3 h-full w-full bg-[url('/katannahmaska.webp')] bg-cover bg-top bg-no-repeat select-none"
       style={{ filter: "blur(30px)" }}
     />
   );
