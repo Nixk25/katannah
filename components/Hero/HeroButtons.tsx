@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Button from "../ui/Button";
 import gsap from "gsap";
+import Link from "next/link";
 
 const HeroButtons = () => {
   const buttonsRef = useRef<HTMLDivElement>(null);
@@ -29,8 +30,15 @@ const HeroButtons = () => {
 
   return (
     <div ref={buttonsRef} className="bottom-4 absolute z-4 right-4 flex gap-5">
-      <Button>Listen now</Button>
-      <Button primary={false}>Booking</Button>
+      <Link
+        target="_blank"
+        href="https://open.spotify.com/artist/4FlpITxeMarYCggIrcOE6j"
+      >
+        <Button>Listen now</Button>
+      </Link>
+      <Link href="#contact">
+        <Button primary={false}>Booking</Button>
+      </Link>
     </div>
   );
 };
